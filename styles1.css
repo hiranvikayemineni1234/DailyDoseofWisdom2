@@ -1,0 +1,179 @@
+/* General Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  transition: background 0.5s ease-in-out;
+}
+
+/* Heading with animated gradient */
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.8rem;
+  text-align: center;
+  margin: 1.5rem 0;
+  background: linear-gradient(45deg, #ff4b2b, #ff416c, #ffafbd, #2193b0);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: glow 2s ease-in-out infinite alternate;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #fff, 0 0 10px #ff9a9e;
+  }
+  to {
+    text-shadow: 0 0 15px #fff, 0 0 20px #fad0c4;
+  }
+}
+
+/* Quote Box */
+#quote-box {
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.4s;
+}
+
+#quote {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+  transition: opacity 0.5s;
+}
+
+#author {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+/* Buttons */
+button {
+  padding: 0.8rem 1.5rem;
+  margin: 0.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#new-quote {
+  background-color: #42a5f5;
+  color: white;
+}
+
+#save-quote {
+  background-color: #ef5350;
+  color: white;
+}
+
+#favorites-toggle {
+  background-color: #66bb6a;
+  color: white;
+}
+
+button:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* Favorites Section */
+#favorites {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 300px;
+  height: 100vh;
+  background: #fff8f8;
+  box-shadow: -4px 0 15px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  overflow-y: auto;
+  transition: right 0.5s ease-in-out;
+  z-index: 999;
+}
+
+#favorites.show {
+  right: 0;
+}
+
+#favorites h2 {
+  font-size: 1.5rem;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.favorite-item {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: #ffe0e0;
+  border-radius: 10px;
+  position: relative;
+}
+
+.favorite-item button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #d32f2f;
+  color: white;
+}
+
+/* Background Balloon Animation */
+#balloons {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+#balloons::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://cdn.pixabay.com/photo/2017/01/31/14/44/balloons-2020653_960_720.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.08;
+  animation: floatBalloons 30s linear infinite;
+}
+
+@keyframes floatBalloons {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #quote-box {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  #favorites {
+    width: 80%;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+}

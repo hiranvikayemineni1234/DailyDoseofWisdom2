@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daily Dose of Wisdom</title>
+  <link rel="stylesheet" href="styles1.css" />
+  <!-- Font for heading -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Background Balloons -->
+  <div id="balloons"></div>
+
+  <!-- Title -->
+  <h1>🎈 Daily Dose of Wisdom 🎈</h1>
+
+  <!-- Quote Box -->
+  <div id="quote-box">
+    <div id="quote">Loading...</div>
+    <div id="author">–</div>
+    <button id="new-quote">New Quote</button>
+    <button id="save-quote">💖 Save Quote</button>
+    <button id="favorites-toggle">⭐ Favorites</button>
+  </div>
+
+  <!-- Favorites Panel -->
+  <div id="favorites">
+    <h2>💾 Favorite Quotes</h2>
+    <div id="favorites-list"></div>
+  </div>
+
+  <!-- Canvas for Confetti -->
+  <canvas id="confetti-canvas" style="position:fixed;top:0;left:0;pointer-events:none;width:100%;height:100%;z-index:1000;"></canvas>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+</html>
